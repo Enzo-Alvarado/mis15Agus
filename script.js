@@ -64,20 +64,3 @@ function actualizarTemporizador() {
 
 actualizarTemporizador();
 setInterval(actualizarTemporizador, 1000);
-
-// Agregar evento al botón de Mercado Pago
-
-const button = document.getElementById("mp-button");
-button.addEventListener("click", () => {
-  const appLink =
-    "mercadopago://payment?url=https://link.mercadopago.com.ar/agusalmada.";
-  const webLink = "https://link.mercadopago.com.ar/agusalmada.";
-
-  // Intentar abrir la app
-  window.location = appLink;
-
-  // Después de 1 segundo, abrir el link web si la app no está instalada
-  setTimeout(() => {
-    window.open(webLink, "_blank");
-  }, 1000);
-});
